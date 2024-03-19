@@ -22,7 +22,13 @@ El atajo para desplegar la ventana del complemento es personalizable bajo la cat
 
 ## Changelog
 
-1.0: Versión inicial del complemento.
+### 1.0.1
+
+Se corrigeron errorres en la escritura del readme y también en el cuadro combinado.
+
+### 1.0
+
+Versión inicial del complemento.
 
 ## Nota del autor
 

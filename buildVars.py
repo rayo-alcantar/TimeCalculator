@@ -25,13 +25,13 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Complemento para NVDA para calcular el tiempo desde de la hora del sistema a una hora seleccionada por el usuario."""),
 	# version
-	"addon_version": "1.0",
+	"addon_version": "1.0.1",
 	# Author(s)
 	"addon_author": "Angel Alcántar<rayoalcantar@gmail.com>",
 	# URL for the add-on documentation support
 	"addon_url": None,
 	# URL for the add-on repository where the source code can be found
-	"addon_sourceURL": None,
+	"addon_sourceURL": "https://github.com/rayo-alcantar/TimeCalculator",
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)

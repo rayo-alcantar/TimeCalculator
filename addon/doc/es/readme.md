@@ -1,6 +1,6 @@
-# Calculadora de Tiempo (Timer Calculator)
+# Calculadora de Tiempo (Time Calculator)
 
-**TimerCalculator** (calculadora de tiempo) es un complemento para NVDA muy simple enfocado en la agilidad y simplicidad.
+**TimeCalculator** (calculadora de tiempo) es un complemento para NVDA muy simple enfocado en la agilidad y simplicidad.
 
 ## Objetivo
 
