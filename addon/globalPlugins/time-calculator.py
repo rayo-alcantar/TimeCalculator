@@ -41,9 +41,9 @@ class TimeCalculatorDialog(wx.Dialog):
         vbox = wx.BoxSizer(wx.VERTICAL)
         
         hbox1 = wx.BoxSizer(wx.HORIZONTAL)
-        self.select_hour= wx.StaticText(panel, label="Selecciona una hora entre 0 y 24:")
+        self.select_hour= wx.StaticText(panel, label="Selecciona una hora entre 0 y 23:")
         self.hourCombo = wx.ComboBox(panel, choices=[f"{i:02d}" for i in range(24)], style=wx.CB_READONLY)
-        self.select_minute=wx.StaticText(panel, label="Selecciona un minuto entre 0 y 60:")
+        self.select_minute=wx.StaticText(panel, label="Selecciona un minuto entre 0 y 59:")
         
         self.minuteCombo = wx.ComboBox(panel, choices=[f"{i:02d}" for i in range(60)], style=wx.CB_READONLY)
         self.minuteCombo.SetSelection(0)
