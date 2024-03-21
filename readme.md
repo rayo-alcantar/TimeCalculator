@@ -1,39 +1,39 @@
 # Calculadora de Tiempo (Time Calculator)
 
-**TimeCalculator** (calculadora de tiempo) es un complemento para NVDA muy simple enfocado en la agilidad y simplicidad.
+**TimeCalculator** (calculadora de tiempo) is a very simple NVDA add-on focused on agility and simplicity.
 
-## Objetivo
+## Objective
 
-Calcular el tiempo que falta entre la hora del sistema y una seleccionada por el usuario.
+Calculate the time remaining between the system time and a time selected by the user.
 
-## Casos de uso
+## Use cases
 
-- ¿Necesitas saber cuánto tiempo falta para ir a dormir? Despliega el complemento, coloca la hora en que vas a dormir, y pulsa el botón calcular. El complemento devolverá una salida por voz y lo copiará al portapapeles: "Faltan 12 horas y 57 minutos".
-- ¿Necesitas saber cuánto tiempo falta para la comida?
+- Need to know how much time is left to go to sleep? Drop down the plugin, enter the time you are going to sleep, and press the calculate button. The plugin will return a voice output and copy it to the clipboard: "12 hours and 57 minutes to go".
+- Need to know how long until lunch?
 
-## Modo de uso
+## How to use
 
-Al instalar el complemento, pulsa el atajo de teclas **NVDA + alt + t** y se desplegará la interfaz con 2 cuadros combinados (hora y minutos) y 2 botones con sus atajos de teclado:
+When installing the add-on, press the key shortcut **NVDA + alt + t** and it will display the interface with 2 combo boxes (hour and minute) and 2 buttons with their keyboard shortcuts:
 
-- **Calcular** - botón - Alt + c
-- **Salir** - botón - Alt + s
+- **Calculate** - button - Alt + c
+- **Exit** - button - Alt + s
 
-El atajo para desplegar la ventana del complemento es personalizable bajo la categoría Calculadora de Tiempo en gestos de entrada.
+The shortcut to display the plug-in window is customisable under the Time Calculator category in input gestures.
 
 ## Changelog
 
 ### 1.0.1
 
-Se corrigeron errorres en la escritura del readme y también en el cuadro combinado.
+Fixed bugs in the readme script and also in the combo box.
 
 ### 1.0
 
-Versión inicial del complemento.
+Initial version of the add-on.
 
-## Nota del autor
+### Author's note
 
-Este es un complemento muy sencillo, si deseas añadir alguna funcionalidad, escríbeme a mi correo: [rayoalcantar@gmail.com](mailto:rayoalcantar@gmail.com)
+This is a very simple add-on, if you want to add some functionality, write me to my mail: [rayoalcantar@gmail.com](mailto:rayoalcantar@gmail.com)
 
-Sígueme en mi GitHub: [github.com/rayo-alcantar](https://github.com/rayo-alcantar)
+Follow me on my GitHub: [github.com/rayo-alcantar](https://github.com/rayo-alcantar)
 
-Realiza un donativo: [https://www.paypal.com/paypalme/rayoalcantar](https://www.paypal.com/paypalme/rayoalcantar)
+Make a donation: [https://www.paypal.com/paypalme/rayoalcantar](https://www.paypal.com/paypalme/rayoalcantar)
