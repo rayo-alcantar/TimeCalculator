@@ -3,7 +3,7 @@
 # This file is covered by the GNU General Public License.
 #
 # import the necessary modules (NVDA)
-
+import gui
 import globalPluginHandler
 import globalVars
 import wx
@@ -98,21 +98,39 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         if globalVars.appArgs.secure:
             return
         super(GlobalPlugin, self).__init__()
+        # Añade un ítem al menú Herramientas correctamente dentro de __init__
+        self.menuItem = gui.mainFrame.sysTrayIcon.toolsMenu.Append(wx.ID_ANY,
+                                                                    "Calculadora de tiempo",
+                                                                    "Abre la calculadora de tiempo")
+        gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onOpenDialog, self.menuItem)
 
-    @scriptHandler.script(description="Abre la calculadora de tiempo", gesture="kb:NVDA+alt+T")
-    
-    def script_openTimeCalculator(self, gesture):
+    def onOpenDialog(self, event):
+        # Llama a la función que abre el diálogo directamente, verificando si ya está abierto
         if not self.dialogOpen:
             threading.Thread(target=self.openDialog, daemon=True).start()
         else:
             ui.message("La calculadora de tiempo ya está abierta.")
+
+    @scriptHandler.script(description="Abre la calculadora de tiempo", gesture="kb:NVDA+alt+T")
+    def script_openTimeCalculator(self, gesture):
+        # Este método activa la misma lógica que el ítem del menú
+        self.onOpenDialog(None)
+
     def openDialog(self):
+        # Este método prepara la apertura del diálogo en el hilo de la GUI
         wx.CallAfter(self.showDialog)
+
     def showDialog(self):
+        # Este método muestra el diálogo y configura el estado de `dialogOpen`
         self.dialogOpen = True
-        dialog = TimeCalculatorDialog(None, self.closeDialog)  # Pasa la función de cierre como callback
+        dialog = TimeCalculatorDialog(None, self.closeDialog)
         dialog.ShowModal()
 
     def closeDialog(self):
-        self.dialogOpen = False  # Actualiza el estado cuando se cierra el diálogo
-    
+        # Este método actualiza el estado cuando el diálogo se cierra
+        self.dialogOpen = False
+
+    def terminate(self):
+        # Este método asegura que el ítem del menú se elimine cuando el complemento se desactive
+        if hasattr(self, 'menuItem'):
+            gui.mainFrame.sysTrayIcon.toolsMenu.Remove(self.menuItem.GetId())
