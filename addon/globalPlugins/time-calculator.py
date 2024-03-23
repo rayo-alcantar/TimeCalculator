@@ -1,4 +1,10 @@
-﻿import globalPluginHandler
+﻿# -*- coding: utf-8 -*-
+# Copyright (C) 2024 Ángel Alcantar  <rayoalcantar@gmail.com>
+# This file is covered by the GNU General Public License.
+#
+# import the necessary modules (NVDA)
+
+import globalPluginHandler
 import globalVars
 import wx
 import scriptHandler
