@@ -1,4 +1,5 @@
 ﻿import globalPluginHandler
+import globalVars
 import wx
 import scriptHandler
 import ui
@@ -85,6 +86,12 @@ class TimeCalculatorDialog(wx.Dialog):
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     scriptCategory = "Calculadora de Tiempo"
     dialogOpen = False
+
+    def __init__(self):
+        # Verifica si NVDA se ejecuta en un entorno seguro
+        if globalVars.appArgs.secure:
+            return
+        super(GlobalPlugin, self).__init__()
 
     @scriptHandler.script(description="Abre la calculadora de tiempo", gesture="kb:NVDA+alt+T")
     
