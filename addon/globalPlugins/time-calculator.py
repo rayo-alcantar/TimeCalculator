@@ -13,6 +13,9 @@ import ctypes
 from ctypes import wintypes
 import datetime
 import threading
+import addonHandler
+addonHandler.initTranslation()
+
 
 # Definiciones para el manejo del portapapeles
 OpenClipboard = ctypes.windll.user32.OpenClipboard
@@ -37,7 +40,8 @@ def set_clipboard_text(text):
 
 class TimeCalculatorDialog(wx.Dialog):
     def __init__(self, parent, onCloseCallback):
-        super().__init__(parent, title="Calculadora de tiempo")
+        # Translators: Title of the Time Calculator dialog
+        super().__init__(parent, title=_("Calculadora de tiempo"))
         self.onCloseCallback = onCloseCallback  # Guarda la referencia al callback
         self.InitUI()
         self.SetSize((400, 200))
@@ -48,9 +52,11 @@ class TimeCalculatorDialog(wx.Dialog):
         vbox = wx.BoxSizer(wx.VERTICAL)
         
         hbox1 = wx.BoxSizer(wx.HORIZONTAL)
-        self.select_hour= wx.StaticText(panel, label="Selecciona una hora entre 0 y 23:")
+        # Translators: Label for selecting an hour
+        self.select_hour= wx.StaticText(panel, label=_("Selecciona una hora entre 0 y 23:"))
         self.hourCombo = wx.ComboBox(panel, choices=[f"{i:02d}" for i in range(24)], style=wx.CB_READONLY)
-        self.select_minute=wx.StaticText(panel, label="Selecciona un minuto entre 0 y 59:")
+        # Translators: Label for selecting a minute
+        self.select_minute=wx.StaticText(panel, label=_("Selecciona un minuto entre 0 y 59:"))
         
         self.minuteCombo = wx.ComboBox(panel, choices=[f"{i:02d}" for i in range(60)], style=wx.CB_READONLY)
         self.minuteCombo.SetSelection(0)
@@ -61,9 +67,11 @@ class TimeCalculatorDialog(wx.Dialog):
         hbox1.Add(self.minuteCombo, flag=wx.RIGHT, border=8)
         
         hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-        calcBtn = wx.Button(panel, label='&Calcular')
+        # Translators: Label for the calculate button
+        calcBtn = wx.Button(panel, label=_('&Calcular'))
         calcBtn.Bind(wx.EVT_BUTTON, self.OnCalculate)
-        closeBtn = wx.Button(panel, label='&Salir')
+        #Translators: button to close or exit the interface.
+        closeBtn = wx.Button(panel, label=_('&Salir'))
         closeBtn.Bind(wx.EVT_BUTTON, lambda e: self.onClose(e))
         hbox2.Add(calcBtn)
         hbox2.Add(closeBtn, flag=wx.LEFT, border=5)
@@ -82,7 +90,8 @@ class TimeCalculatorDialog(wx.Dialog):
         diff = target - now
         hours, remainder = divmod(diff.seconds, 3600)
         minutes = remainder // 60
-        result = f"Faltan {hours} horas y {minutes} minutos."
+        # Translators: Message displaying the time remaining. {0} is replaced by the number of hours, and {1} by the number of minutes.
+        result = _("Faltan {0} horas y {1} minutos.").format(hours, minutes)
         set_clipboard_text(result)
         ui.message(result)
     def onClose(self, event):
@@ -109,7 +118,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         if not self.dialogOpen:
             threading.Thread(target=self.openDialog, daemon=True).start()
         else:
-            ui.message("La calculadora de tiempo ya está abierta.")
+            #Translators: indicates that the time calculator is already avert.
+            ui.message(_("La calculadora de tiempo ya está abierta."))
 
     @scriptHandler.script(description="Abre la calculadora de tiempo", gesture="kb:NVDA+alt+T")
     def script_openTimeCalculator(self, gesture):

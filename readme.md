@@ -13,7 +13,7 @@ Calcular el tiempo que falta entre la hora del sistema y una seleccionada por el
 
 ## Modo de uso
 
-Al instalar el complemento, pulsa el atajo de teclas **NVDA + alt + t** y se desplegará la interfaz con 2 cuadros combinados (hora y minutos) y 2 botones con sus atajos de teclado:
+Al instalar el complemento, pulsa el atajo de teclas **NVDA + alt + t** o ejecútalo desde el menú herramientas; y se desplegará la interfaz con 2 cuadros combinados (hora y minutos) y 2 botones con sus atajos de teclado:
 
 - **Calcular** - botón - Alt + c
 - **Salir** - botón - Alt + s
@@ -21,6 +21,16 @@ Al instalar el complemento, pulsa el atajo de teclas **NVDA + alt + t** y se des
 El atajo para desplegar la ventana del complemento es personalizable bajo la categoría Calculadora de Tiempo en gestos de entrada.
 
 ## Changelog
+
+### 1.1.1
+
+Se hizo traducible el complemento. Sin traducciones aún.
+
+### 1.1
+
+* Se evita que el copmelmento se ejecute en pantallas seguras.
+* Se añadieron correctamente las referencias a la licencia y comentarios en el complemento.
+* Se añadió un item en el menú herramientas para poder abrir el copmelmento desde allí.
 
 ### 1.0.1
 
