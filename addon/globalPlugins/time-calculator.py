@@ -16,7 +16,11 @@ import threading
 import addonHandler
 addonHandler.initTranslation()
 
-
+# Decorador para deshabilitar en modo seguro
+def disableInSecureMode(decoratedCls):
+    if globalVars.appArgs.secure:
+        return globalPluginHandler.GlobalPlugin
+    return decoratedCls
 # Definiciones para el manejo del portapapeles
 OpenClipboard = ctypes.windll.user32.OpenClipboard
 EmptyClipboard = ctypes.windll.user32.EmptyClipboard
@@ -97,7 +101,7 @@ class TimeCalculatorDialog(wx.Dialog):
     def onClose(self, event):
         self.onCloseCallback()  # Llama al callback
         self.Destroy()
-
+@disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     scriptCategory = "Calculadora de Tiempo"
     dialogOpen = False
@@ -109,8 +113,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         super(GlobalPlugin, self).__init__()
         # Añade un ítem al menú Herramientas correctamente dentro de __init__
         self.menuItem = gui.mainFrame.sysTrayIcon.toolsMenu.Append(wx.ID_ANY,
-                                                                    "Calculadora de tiempo",
-                                                                    "Abre la calculadora de tiempo")
+        #Translators|: name to menu tools
+                                                                    _("Calculadora de tiempo"),
+                                                                    _("Abre la calculadora de tiempo"))
         gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onOpenDialog, self.menuItem)
 
     def onOpenDialog(self, event):
