@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Complemento para NVDA para calcular el tiempo desde de la hora del sistema a una hora seleccionada por el usuario."""),
 	# version
-	"addon_version": "1.1.1",
+	"addon_version": "1.1.2",
 	# Author(s)
 	"addon_author": "Angel Alcántar<rayoalcantar@gmail.com>",
 	# URL for the add-on documentation support
@@ -56,7 +56,7 @@ addon_info = {
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = ["addon/globalPlugins/timeCalculator.py"]
+pythonSources = ["addon/globalPlugins/time-calculator.py"]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]
