@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'TimeCalculator' '1.1.2'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-03-31 10:13-0600\n"
-"PO-Revision-Date: 2024-03-31 10:15-0600\n"
+"PO-Revision-Date: 2024-03-31 11:30-0600\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr "Time Calculator"
 #. Translators: Label for selecting an hour
 #: addon\globalPlugins\time-calculator.py:60
 msgid "Selecciona una hora entre 0 y 23:"
-msgstr "Select a time between 0 and 23:"
+msgstr "Select an hour between 0 and 23"
 
 #. Translators: Label for selecting a minute
 #: addon\globalPlugins\time-calculator.py:63
