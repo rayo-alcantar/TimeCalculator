@@ -22,6 +22,10 @@ El atajo para desplegar la ventana del complemento es personalizable bajo la cat
 
 ## Changelog
 
+### 1.2
+
+* Se añade traducción al inglés.
+
 ### 1.1.2
 
 * Se hace traducible el item en el menú herramientas.
