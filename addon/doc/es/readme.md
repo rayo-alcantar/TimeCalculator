@@ -1,5 +1,7 @@
 # Calculadora de Tiempo (Time Calculator)
 
+Descargar [versión actual](https://nvda.es/files/get.php?file=timeCalculator)
+
 **TimeCalculator** (calculadora de tiempo) es un complemento para NVDA muy simple enfocado en la agilidad y simplicidad.
 
 ## Objetivo
