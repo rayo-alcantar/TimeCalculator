@@ -24,6 +24,11 @@ El atajo para desplegar la ventana del complemento es personalizable bajo la cat
 
 ## Changelog
 
+### 1.2.4
+
+* Se añade la opción para cerrar el cuadro con escape.
+* 
+
 ### 1.2.3
 
 * Se cambian funciones internas para manejar de mejor forma el portapapeles.

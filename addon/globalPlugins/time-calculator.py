@@ -32,6 +32,7 @@ class TimeCalculatorDialog(wx.Dialog):
 		self.SetSize((400, 200))
 		self.Centre()
 		self.Bind(wx.EVT_CLOSE, self.onClose)  # Vincula el evento de cierre
+		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyPress)  # Vincula el evento para la tecla Escape
 	def InitUI(self):
 		panel = wx.Panel(self)
 		vbox = wx.BoxSizer(wx.VERTICAL)
@@ -64,7 +65,11 @@ class TimeCalculatorDialog(wx.Dialog):
 		vbox.Add(hbox1, flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, border=10)
 		vbox.Add(hbox2, flag=wx.ALIGN_CENTER|wx.TOP|wx.BOTTOM, border=10)
 		panel.SetSizer(vbox)
-
+	def onKeyPress(self, event):
+		keycode = event.GetKeyCode()
+		if keycode == wx.WXK_ESCAPE:
+			self.Close()
+		event.Skip()
 	def OnCalculate(self, event):
 		now = datetime.datetime.now()
 		target_hour = int(self.hourCombo.GetValue())

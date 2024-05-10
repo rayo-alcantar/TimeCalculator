@@ -24,6 +24,10 @@ El atajo para desplegar la ventana del complemento es personalizable bajo la cat
 
 ## Changelog
 
+### 1.2.3
+
+* Se cambian funciones internas para manejar de mejor forma el portapapeles.
+
 ### 1.2
 
 * Se añade traducción al inglés.
